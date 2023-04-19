@@ -1,0 +1,263 @@
+{
+	"info": {
+		"_postman_id": "438ee4f3-e74c-4d9b-b083-d21a69e22ffd",
+		"name": "AIPLANET-HACKATHON",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24973604"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Ridder\",\r\n    \"password\":\"lastride\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/users/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Ridder\",\r\n    \"password\":\"lastride\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/users/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateHackathon",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgzMjA1NTk2LCJpYXQiOjE2ODE5MDk1OTYsImp0aSI6IjY5Mzg2MzY0ZmQwMDRmYmM5OGVjMjQyOWY4MTUyNjNiIiwidXNlcm5hbWUiOiJTdGFyIn0.8iFHIvYfoyqSfJlQYJ_ZckDhn9Ts5xHbLROSEDAhd8o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Star Hackathon",
+							"type": "text"
+						},
+						{
+							"key": "background_image",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "hackathon_image",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "submission_type",
+							"value": "FILE",
+							"type": "text"
+						},
+						{
+							"key": "start_datetime",
+							"value": "2023-04-18 05:44:16",
+							"type": "text"
+						},
+						{
+							"key": "end_datetime",
+							"value": "2023-04-22 05:44:16",
+							"type": "text"
+						},
+						{
+							"key": "reward_price",
+							"value": "10000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/hackathon/create/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"hackathon",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view all hackathon",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/hackathon/view/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"hackathon",
+						"view",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enroll in Hackathon",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgzMjA2MDQwLCJpYXQiOjE2ODE5MTAwNDAsImp0aSI6Ijg3NjA3ZThlNGI0MTRjYzY5MmNjOTkzZjBmZGQyNGNjIiwidXNlcm5hbWUiOiJSaWRkZXIifQ.fJRovmpZOwaiz1H9WVIdLBJc7VsYHE_HUg8V_wPi52Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"hackathon_id\": \"f29b533f-884b-4fde-9bc6-f84411d7dfff\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/hackathon/enroll/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"hackathon",
+						"enroll",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submission",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgzMjA2MDQwLCJpYXQiOjE2ODE5MTAwNDAsImp0aSI6Ijg3NjA3ZThlNGI0MTRjYzY5MmNjOTkzZjBmZGQyNGNjIiwidXNlcm5hbWUiOiJSaWRkZXIifQ.fJRovmpZOwaiz1H9WVIdLBJc7VsYHE_HUg8V_wPi52Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"hackathon_id\":\"0a5602a0-b685-4a89-8e8a-2ef34ec03fc0\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/submission/create/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"submission",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
